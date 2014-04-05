@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="ie6"><![endif]-->
+<!--[if IE 7]><html class="ie7"><![endif]-->
+<!--[if IE 8]><html class="ie8"><![endif]-->
+<!--[if gt IE 8]><!--><html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+    <title>Fashion Moodboad</title>
+    <meta name="description" content="Your Own Personal Moodboard">
+    <meta name="author" content="Amechi Egbe">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">  
+  	<!--   CSS LINKS -->
+    
+    <!--  CSS for resets  -->
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <!--  CSS for other styles  -->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+
+    <!--*****Need JS Libraries in head ************ -->
+    <script src="http://d3lp1msu2r81bx.cloudfront.net/kjs/js/lib/kinetic-v4.6.0.min.js"></script>
+    <script src="js/modernizr.dev.js"></script>
+        
+    <!--
+    This script enables structural HTML5 elements in old IE.
+    http://code.google.com/p/html5shim/ -->
+    <!--[if lt IE 9]>
+    <script src = "//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->    
+
+</head>
+	<body>
+		<!-- GitHub Ribbon -->
+		<a href="https://github.com/you"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+		
+		<!-- Moodboard Start -->
+		<div id="designMoodBoard">
+		    <div id="container" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+		    <div id="buttons">
+		        <button id="save">Save Moodboard</button> 
+		    </div>
+
+		    <div id="image_menu">
+		        <table id="item_table" border="1px">
+		            <tr id="dress">
+		                <td>
+		                    <img id="dress_1" src="images/dress_1.jpeg" draggable="true" ondragstart="drag(event)" />
+		                </td>
+		                <td>
+		                    <img id="dress_2" src="images/dress_2.jpg" draggable="true" ondragstart="drag(event)" />
+		                </td>
+		                <td>
+		                    <img id="dress_3" src="images/dress_3.jpg" draggable="true" ondragstart="drag(event)" />
+		                </td>
+		                <td>
+		                    <img id="dress_4" src="images/dress_4.jpg" draggable="true" ondragstart="drag(event)" />
+		                </td>
+		            </tr>
+		            <tr id="handbag">
+		                <td>
+		                    <img id="handbag_1" src="images/handbag_1.jpeg" draggable="true" ondragstart="drag(event)" />
+		                </td>
+		                <td>
+		                    <img id="handbag_2" src="images/handbag_2.jpg" draggable="true" ondragstart="drag(event)" />
+		                </td>
+		                <td>
+		                    <img id="handbag_3" src="images/handbag_3.jpg" draggable="true" ondragstart="drag(event)" />
+		                </td>
+		                <td>
+		                    <img id="handbag_4" src="images/handbag_4.jpg" draggable="true" ondragstart="drag(event)" />
+		                </td>
+		            </tr>
+		            <tr id="accessory">
+		                <td>
+		                    <img id="accessory_1" src="images/accessory_1.jpg" draggable="true" ondragstart="drag(event)" />
+		                </td>
+		                <td>
+		                    <img id="accessory_2" src="images/accessory_2.jpg" draggable="true" ondragstart="drag(event)" />
+		                </td>
+		                <td>
+		                    <img id="accessory_3" src="images/accessory_3.jpg" draggable="true" ondragstart="drag(event)" />
+		                </td>
+		                <td>
+		                    <img id="accessory_4" src="images/accessory_4.jpg" draggable="true" ondragstart="drag(event)" />
+		                </td>
+		            </tr>
+		            <tr id="shoe">
+		                <td>
+		                    <img id="shoe_1" src="images/shoe_1.jpg" draggable="true" ondragstart="drag(event)" />
+		                </td>
+		                <td>
+		                    <img id="shoe_2" src="images/shoe_2.jpg" draggable="true" ondragstart="drag(event)" />
+		                </td>
+		                <td>
+		                    <img id="shoe_3" src="images/shoe_3.jpg" draggable="true" ondragstart="drag(event)" />
+		                </td>
+		                <td>
+		                    <img id="shoe_4" src="images/shoe_4.jpg" draggable="true" ondragstart="drag(event)" />
+		                </td>
+		            </tr>
+		        </table>
+		    </div>
+		</div>
+  	</body>
+</html>

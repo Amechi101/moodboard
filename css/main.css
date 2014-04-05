@@ -1,0 +1,21 @@
+#container {
+	border: 2px dashed #aaa;
+}
+td>img {
+	width: 100px;
+	height: auto;
+}
+#designMoodBoard {
+	display:inline;
+}
+#container, #buttons {
+	float: left;
+	margin-left:35px;
+	margin-top: 35px;
+}
+
+#image_menu {
+	float: left;
+	margin-top: 20px;
+	margin-left: 160px;
+}
