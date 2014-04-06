@@ -1,21 +1,119 @@
-#container {
-	border: 2px dashed #aaa;
-}
-td>img {
-	width: 100px;
-	height: auto;
-}
-#designMoodBoard {
-	display:inline;
-}
-#container, #buttons {
-	float: left;
-	margin-left:35px;
-	margin-top: 35px;
+.designMoodBoard {
+    float: left;
 }
 
-#image_menu {
-	float: left;
-	margin-top: 20px;
-	margin-left: 160px;
+.buttonMoodBoard {
+margin-top: 10px;
 }
+
+#container {
+ border: 7px solid #000;
+}
+
+/**
+ * Grid items animation
+ */
+#tiles li {
+  -webkit-transition: all 0.3s ease-out;
+     -moz-transition: all 0.3s ease-out;
+       -o-transition: all 0.3s ease-out;
+          transition: all 0.3s ease-out;
+}
+
+.wookmark-placeholder {
+  -webkit-transition: all 0.3s ease-out;
+     -moz-transition: all 0.3s ease-out;
+       -o-transition: all 0.3s ease-out;
+          transition: all 0.3s ease-out;
+}
+
+
+/** General grid styling **/
+
+#main {
+  float: right;
+  width:800px;
+  clear:both;
+  width:61.5%;
+  margin-top:-45%;
+}
+
+/**
+ * Grid container
+ */
+#tiles {
+  list-style-type: none;
+  position: relative; /** Needed to ensure items are laid out relative to this container **/
+  margin: 0;
+  padding: 0;
+}
+
+/**
+ * Grid items
+ */
+#tiles li {
+  width: 210px;
+  background-color: #ffffff;
+  border: 1px solid #dedede;
+          border-radius: 2px;
+     -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  display: none; /** Hide items initially to avoid a flicker effect **/
+  cursor: pointer;
+  padding: 4px;
+}
+
+#tiles li.inactive {
+  visibility: hidden;
+  opacity: 0;
+}
+
+#tiles li img {
+  display: block;
+}
+
+/**
+ * Grid item text
+ */
+#tiles li p {
+  color: #666;
+  font-size: 13px;
+line-height: 20px;
+text-align: center;
+font-weight: 200;
+  margin: 7px 0 2px 7px;
+}
+
+/**
+ * Placerholder css
+ */
+.wookmark-placeholder {
+          border-radius: 2px;
+     -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  background-color: #eee;
+  border: 1px solid #dedede;
+  z-index: -1;
+}
+
+/***** Media Queries For Page *******/
+
+/*@media screen and (max-width:1300px) {
+    
+ #image_menu {
+        width:700px;
+    }      
+}
+
+@media screen and (min-width:1100px) {
+    
+ #image_menu {
+        width:690px;
+    }      
+    .designMoodBoard {
+        width:50%;
+
+        
+    }  
+}*/
+

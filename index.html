@@ -5,20 +5,21 @@
 <!--[if gt IE 8]><!--><html lang="en" class="no-js"> <!--<![endif]-->
 <head>
 	<meta charset="utf-8">
-    <title>Fashion Moodboad</title>
-    <meta name="description" content="Your Own Personal Moodboard">
+    <title>Photo Moodboad</title>
+    <meta name="description" content="Your own personal moodboard">
     <meta name="author" content="Amechi Egbe">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">  
   	<!--   CSS LINKS -->
-    
-    <!--  CSS for resets  -->
-    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+
     <!--  CSS for other styles  -->
     <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+   
 
     <!--*****Need JS Libraries in head ************ -->
-    <script src="http://d3lp1msu2r81bx.cloudfront.net/kjs/js/lib/kinetic-v4.6.0.min.js"></script>
-    <script src="js/modernizr.dev.js"></script>
+    <script src="js/lib/jquery-1.11.0.min.js"></script>
+    <script src="js/lib/jquery.sticky.js"></script>
+    <script src="js/lib/modernizr.dev.js"></script>
         
     <!--
     This script enables structural HTML5 elements in old IE.
@@ -28,77 +29,177 @@
     <![endif]-->    
 
 </head>
-	<body>
-		<!-- GitHub Ribbon -->
-		<a href="https://github.com/you"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
-		
-		<!-- Moodboard Start -->
-		<div id="designMoodBoard">
-		    <div id="container" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-		    <div id="buttons">
-		        <button id="save">Save Moodboard</button> 
-		    </div>
+	<body>	
 
-		    <div id="image_menu">
-		        <table id="item_table" border="1px">
-		            <tr id="dress">
-		                <td>
-		                    <img id="dress_1" src="images/dress_1.jpeg" draggable="true" ondragstart="drag(event)" />
-		                </td>
-		                <td>
-		                    <img id="dress_2" src="images/dress_2.jpg" draggable="true" ondragstart="drag(event)" />
-		                </td>
-		                <td>
-		                    <img id="dress_3" src="images/dress_3.jpg" draggable="true" ondragstart="drag(event)" />
-		                </td>
-		                <td>
-		                    <img id="dress_4" src="images/dress_4.jpg" draggable="true" ondragstart="drag(event)" />
-		                </td>
-		            </tr>
-		            <tr id="handbag">
-		                <td>
-		                    <img id="handbag_1" src="images/handbag_1.jpeg" draggable="true" ondragstart="drag(event)" />
-		                </td>
-		                <td>
-		                    <img id="handbag_2" src="images/handbag_2.jpg" draggable="true" ondragstart="drag(event)" />
-		                </td>
-		                <td>
-		                    <img id="handbag_3" src="images/handbag_3.jpg" draggable="true" ondragstart="drag(event)" />
-		                </td>
-		                <td>
-		                    <img id="handbag_4" src="images/handbag_4.jpg" draggable="true" ondragstart="drag(event)" />
-		                </td>
-		            </tr>
-		            <tr id="accessory">
-		                <td>
-		                    <img id="accessory_1" src="images/accessory_1.jpg" draggable="true" ondragstart="drag(event)" />
-		                </td>
-		                <td>
-		                    <img id="accessory_2" src="images/accessory_2.jpg" draggable="true" ondragstart="drag(event)" />
-		                </td>
-		                <td>
-		                    <img id="accessory_3" src="images/accessory_3.jpg" draggable="true" ondragstart="drag(event)" />
-		                </td>
-		                <td>
-		                    <img id="accessory_4" src="images/accessory_4.jpg" draggable="true" ondragstart="drag(event)" />
-		                </td>
-		            </tr>
-		            <tr id="shoe">
-		                <td>
-		                    <img id="shoe_1" src="images/shoe_1.jpg" draggable="true" ondragstart="drag(event)" />
-		                </td>
-		                <td>
-		                    <img id="shoe_2" src="images/shoe_2.jpg" draggable="true" ondragstart="drag(event)" />
-		                </td>
-		                <td>
-		                    <img id="shoe_3" src="images/shoe_3.jpg" draggable="true" ondragstart="drag(event)" />
-		                </td>
-		                <td>
-		                    <img id="shoe_4" src="images/shoe_4.jpg" draggable="true" ondragstart="drag(event)" />
-		                </td>
-		            </tr>
-		        </table>
+        <!-- Wrapper for Area -->
+		<div class="wrapper container-fluid">
+
+            <!-- Moodboard Start -->
+		    <div class="designMoodBoard">
+    		    <div id="sticker">
+    		    	<div id="container" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    		    	<div class="buttonMoodBoard">
+                        <button class="btn btn-primary btn-lg" id="save">Save Moodboard</button> 
+                        <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">About Project</button>
+                    </div>
+    		    </div>
 		    </div>
+            
+            <!-- Information Modal -->
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                             <h4 class="modal-title">Photo Moodboard</h4>
+
+                        </div>
+                        <div class="modal-body">
+                            <p>Created a small moodboard to allow for easy dragging and dropping of images. Once you save the board you can create a static image of the board and save the it if you would like! The photos are streamed in using an API from the Wookmark page!</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Main Content -->
+            <div id="main" role="main">
+                <ul id="tiles">
+                <!-- Where content is dynamically Loaded -->
+                </ul>
+                <div id="loader">
+                    <div id="loaderCircle"></div>
+                </div>
+            </div>
 		</div>
+        
+
+		<!-- Le javascript
+    	================================================== -->
+    	<!-- Placed at the end of the document so the pages load faster -->
+		<script src="js/lib/bootstrap.min.js"></script>
+		<script src="js/lib/jquery.wookmark.min.js"></script>
+    	<script src="js/lib/jquery.imagesloaded.js"></script>
+        <script src="js/app.js"></script>
+		<script src="http://d3lp1msu2r81bx.cloudfront.net/kjs/js/lib/kinetic-v4.6.0.min.js"></script>
+		<script>
+			var stage = new Kinetic.Stage({
+				container: 'container',
+				width: 500,
+				height:500
+			});
+			
+			var layer = new Kinetic.Layer();
+
+		</script>
+		<script>
+			$(document).ready(function(){
+                $("#sticker").sticky({topSpacing:0});
+			});
+		</script>
+		<script>
+            (function ($) {
+                var handler = null,
+                    page = 1,
+                    isLoading = false,
+                    apiURL = 'http://www.wookmark.com/api/json/popular';
+
+                // Prepare layout options.
+                var options = {
+                    autoResize: true, // This will auto-update the layout when the browser window is resized.
+                    container: $('#tiles'), // Optional, used for some extra CSS styling
+                    offset: 2, // Optional, the distance between grid items
+                    itemWidth: 210 // Optional, the width of a grid item
+                };
+
+                /**
+                 * When scrolled all the way to the bottom, add more tiles.
+                 */
+                function onScroll(event) {
+                    // Only check when we're not still waiting for data.
+                    if (!isLoading) {
+                        // Check if we're within 100 pixels of the bottom edge of the broser window.
+                        var closeToBottom = ($(window).scrollTop() + $(window).height() > $(document).height() - 100);
+                        if (closeToBottom) {
+                            loadData();
+                        }
+                    }
+                };
+
+                /**
+                 * Refreshes the layout.
+                 */
+                function applyLayout() {
+                    options.container.imagesLoaded(function () {
+                        // Create a new layout handler when images have loaded.
+                        handler = $('#tiles li');
+                        handler.wookmark(options);
+                    });
+                };
+
+                /**
+                 * Loads data from the API.
+                 */
+                function loadData() {
+                    isLoading = true;
+                    $('#loaderCircle').show();
+
+                    $.ajax({
+                        url: apiURL,
+                        dataType: 'jsonp',
+                        data: {
+                            page: page
+                        }, // Page parameter to make sure we load new data
+                        success: onLoadData
+                    });
+                };
+
+                /**
+                 * Receives data from the API, creates HTML for images and updates the layout
+                 */
+                function onLoadData(data) {
+                    isLoading = false;
+                    $('#loaderCircle').hide();
+
+                    // Increment page index for future calls.
+                    page++;
+
+                    // Create HTML for the images.
+                    var html = '';
+                    var dragNum = 0;
+                    var dragBoolean = true;
+                    var i = 0,
+                        length = data.length,
+                        image;
+                    for(; i < length; i++) {
+                        image = data[i];
+
+                        html += '<li>';
+                        dragNum++;
+                        // Image tag (preview in Wookmark are 200px wide, so we calculate the height based on that).
+                        html += '<img src="' + image.preview + '" width="200" id="' + "drag" + dragNum + '" draggable="' + dragBoolean + '" ondragstart="drag(event)" height="' + Math.round(image.height / image.width * 200) + '">';
+
+                        // Image title.
+                        html += '<p>' + image.title + '</p>';
+
+                        html += '</li>';
+                    }
+
+                    // Add image HTML to the page.
+                    $('#tiles').append(html);
+
+                    // Apply layout.
+                    applyLayout();
+                };
+
+                // Capture scroll event.
+                $(document).bind('scroll', onScroll);
+
+                // Load first data from the API.
+                loadData();
+            })(jQuery);
+  		</script>
   	</body>
 </html>
