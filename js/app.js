@@ -54,8 +54,10 @@ function drop(ev) {
 //saving to data base via Json
 document.getElementById('save').addEventListener('click', function (canvas) {
         var json = stage.toJSON();
+        
         var canvas = document.getElementsByTagName("canvas");
 		var img    = canvas[0].toDataURL("image/png");
+        
         var alertJson = alert(img);
 		console.log(json, alertJson);	
     }, false);
