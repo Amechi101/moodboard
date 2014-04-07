@@ -1,3 +1,11 @@
+@font-face {
+    font-family: 'Track';
+    src: url('../fonts/Track_Italic.otf');
+    src: url('../fonts/Track.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
 .designMoodBoard {
     float: left;
 }

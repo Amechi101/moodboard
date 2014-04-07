@@ -55,7 +55,7 @@
 
                         </div>
                         <div class="modal-body">
-                            <p>Created a small moodboard to allow for easy dragging and dropping of images. Once you save the board you can create a static image of the board and save the it if you would like! The photos are streamed in using an API from the Wookmark page! Project is available on github 
+                            <p>Created a small moodboard to allow for easy dragging and dropping of images. Once you place images within the canvas, save the board and copy the generated link and paste it within your favorite browser to see a copy of the photos you just placed! Project is available on github to download!
                             <a href="https://github.com/Amechi101/moodboard">View Here</a></p>
                         </div>
                         <div class="modal-footer">
@@ -68,6 +68,7 @@
             <!-- Main Content -->
             <div id="main" role="main">
                 <ul id="tiles">
+                <!-- <li><img src="images/accessory_1.jpg" id="drag1" width="200" height="200" ondragstart="drag(event)" draggable="true"></li> -->
                 <!-- Where content is dynamically Loaded -->
                 </ul>
                 <div id="loader">
@@ -102,10 +103,11 @@
 		</script>
 		<script>
             (function ($) {
+
                 var handler = null,
                     page = 1,
                     isLoading = false,
-                    apiURL = 'http://www.wookmark.com/api/json/popular';
+                    apiURL = 'js/imageInfo.json';
 
                 // Prepare layout options.
                 var options = {
@@ -149,7 +151,7 @@
 
                     $.ajax({
                         url: apiURL,
-                        dataType: 'jsonp',
+                        dataType: 'json',
                         data: {
                             page: page
                         }, // Page parameter to make sure we load new data
@@ -169,21 +171,33 @@
 
                     // Create HTML for the images.
                     var html = '';
+                    
+                    // Id for Kinetic Library to allow for dragging the element
                     var dragNum = 0;
+                    
+                    // Image # 
+                    var wookmarkNum = 0;
+                    
+                    //Number to reference from the JSON file for the image #
+                    var imgNum = 1;
+                    
                     var dragBoolean = true;
                     var i = 0,
-                        length = data.length,
-                        image;
+                        length = data.length;
+                    
                     for(; i < length; i++) {
-                        image = data[i];
+                        
+                        wookmarkNum++;
+                        imgNum++;
+                        dragNum++;
 
                         html += '<li>';
-                        dragNum++;
+
                         // Image tag (preview in Wookmark are 200px wide, so we calculate the height based on that).
-                        html += '<img src="' + image.preview + '" width="200" id="' + "drag" + dragNum + '" draggable="' + dragBoolean + '" ondragstart="drag(event)" height="' + Math.round(image.height / image.width * 200) + '">';
+                        html += '<img src="img/test'+ imgNum +'.jpg" width="200" id="' + "drag" + dragNum + '" draggable="' + dragBoolean + '" ondragstart="drag(event)"';
 
                         // Image title.
-                        html += '<p>' + image.title + '</p>';
+                        html += '<p>' + wookmarkNum + '</p>';
 
                         html += '</li>';
                     }
